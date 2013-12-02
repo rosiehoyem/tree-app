@@ -1,0 +1,33 @@
+<h1>Listing trees</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Address</th>
+      <th>Latitude</th>
+      <th>Longitude</th>
+      <th>Species</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @trees.each do |tree| %>
+      <tr>
+        <td><%= tree.address %></td>
+        <td><%= tree.latitude %></td>
+        <td><%= tree.longitude %></td>
+        <td><%= tree.species %></td>
+        <td><%= link_to 'Show', tree %></td>
+        <td><%= link_to 'Edit', edit_tree_path(tree) %></td>
+        <td><%= link_to 'Destroy', tree, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Tree', new_tree_path %>

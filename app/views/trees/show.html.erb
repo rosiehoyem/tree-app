@@ -1,0 +1,33 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Address:</strong>
+  <%= @tree.address %>
+</p>
+
+<p>
+  <strong>Latitude:</strong>
+  <%= @tree.latitude %>
+</p>
+
+<p>
+  <strong>Longitude:</strong>
+  <%= @tree.longitude %>
+</p>
+
+<p>
+  <strong>Species:</strong>
+  <%= @tree.species %>
+</p>
+
+<%= link_to 'Edit', edit_tree_path(@tree) %> |
+<%= link_to 'Back', trees_path %>
+
+<%= image_tag "http://maps.google.com/maps/api/staticmap?size=450x300&sensor=false&zoom=16&markers=#{@tree.latitude}%2C#{@tree.longitude}" %>
+
+<h3>Nearby trees</h3>
+<ul>
+<% for tree in @tree.nearbys(10) %>
+  <li><%= link_to tree.address, tree %> (<%= tree.distance.round(2) %> miles)</li>
+<% end %>
+</ul>
