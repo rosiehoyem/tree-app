@@ -4,16 +4,18 @@ class TreesController < ApplicationController
   # GET /trees
   # GET /trees.json
   def index
-    if params[:search].present?
-      @trees = Tree.near(params[:search], 50, :order => :distance)
-    else
-      @trees = Tree.all
+    @trees = Tree.all
+    @hash = Gmaps4rails.build_markers(@trees) do |tree, marker|
+      marker.lat tree.latitude
+      marker.lng tree.longitude
     end
   end
+
 
   # GET /trees/1
   # GET /trees/1.json
   def show
+    
   end
 
   # GET /trees/new
