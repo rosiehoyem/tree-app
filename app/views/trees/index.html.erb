@@ -1,0 +1,12 @@
+<h1>Trees</h1>
+
+<%= form_tag trees_path, :method => :get do %>
+  <p>
+    <%= text_field_tag :search, params[:search] %>
+    <%= submit_tag "Search Near", :name => nil %>
+  </p>
+<% end %>
+
+<br>
+
+<%= link_to 'New Tree', new_tree_path %>

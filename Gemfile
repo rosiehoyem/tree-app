@@ -33,7 +33,11 @@ group :doc do
 end
 
 # CartoDB
-gem 'cartodb-rb-client', git: 'git@github.com:rosiehoyem/cartodb-rb-client.git'
+# gem 'cartodb-rb-client', git: 'git@github.com:rosiehoyem/cartodb-rb-client.git'
+
+#Geocode + GoogleMaps
+gem 'geocoder'
+gem 'gmaps4rails'
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.1.2'

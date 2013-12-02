@@ -1,0 +1,11 @@
+<%= image_tag "http://maps.google.com/maps/api/staticmap?size=450x300&sensor=false&zoom=16&markers=#{@tree.latitude}%2C#{@tree.longitude}" %>
+
+<h3>Nearby Trees</h3>
+<ul>
+<% for location in @tree.nearbys(10) %>
+  <li><%= link_to tree.address, tree %> (<%= tree.distance.round(2) %> miles)</li>
+<% end %>
+</ul>
+
+<%= link_to 'Edit', edit_tree_path(@tree) %> |
+<%= link_to 'Back', trees_path %>
