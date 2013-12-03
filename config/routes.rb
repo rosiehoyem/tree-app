@@ -1,4 +1,5 @@
 TreeApp::Application.routes.draw do
+  devise_for :users, path_names: {sign_in: "login", sign_out: "logout"}
   resources :trees
 
   get "pages/home"
@@ -6,7 +7,7 @@ TreeApp::Application.routes.draw do
   # See how all your routes lay out with "rake routes".
 
   # You can have the root of your site routed with "root"
-  # root 'welcome#index'
+  root 'pages#home'
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
