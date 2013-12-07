@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20131207204203) do
+ActiveRecord::Schema.define(version: 20131207231417) do
 
   create_table "locations", force: true do |t|
     t.string   "city"
@@ -36,10 +36,12 @@ ActiveRecord::Schema.define(version: 20131207204203) do
     t.string   "address"
     t.float    "latitude"
     t.float    "longitude"
-    t.string   "species"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "species_id"
   end
+
+  add_index "trees", ["species_id"], name: "index_trees_on_species_id"
 
   create_table "user_locations", force: true do |t|
     t.integer  "user_id"
