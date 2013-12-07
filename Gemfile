@@ -53,6 +53,10 @@ gem 'omniauth-facebook'
 # Use debugger
 # gem 'debugger', group: [:development, :test]
 
+# Wikipedia scrape
+gem 'nokogiri'
+
+
 group :test, :development do
   gem "rspec-rails"
   gem "capybara"
