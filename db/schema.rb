@@ -11,7 +11,26 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20131207194759) do
+ActiveRecord::Schema.define(version: 20131207204203) do
+
+  create_table "locations", force: true do |t|
+    t.string   "city"
+    t.string   "state"
+    t.string   "bioregion"
+    t.string   "political_region"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "species", force: true do |t|
+    t.string   "common_name"
+    t.string   "scientific_name"
+    t.string   "description"
+    t.string   "distribution"
+    t.string   "range_map"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "trees", force: true do |t|
     t.string   "address"
@@ -21,6 +40,16 @@ ActiveRecord::Schema.define(version: 20131207194759) do
     t.datetime "created_at"
     t.datetime "updated_at"
   end
+
+  create_table "user_locations", force: true do |t|
+    t.integer  "user_id"
+    t.integer  "location_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "user_locations", ["location_id"], name: "index_user_locations_on_location_id"
+  add_index "user_locations", ["user_id"], name: "index_user_locations_on_user_id"
 
   create_table "users", force: true do |t|
     t.string   "email",                  default: "", null: false
