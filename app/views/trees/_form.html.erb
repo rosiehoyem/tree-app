@@ -12,20 +12,19 @@
   <% end %>
 
   <div class="field">
-    <%= f.label :latitude %> <br>
-    <%= text_field_tag :latitude, nil, placeholder: 'latitude' %>
+    <%= hidden_field_tag :latitude, nil, placeholder: 'latitude' %>
   </div>
   <div class="field">
-    <%= f.label :longitude %> <br>
-    <%= text_field_tag :longitude, nil, placeholder: 'longitude' %>
+    <%= hidden_field_tag :longitude, nil, placeholder: 'longitude' %>
   </div>
+  Use current location or enter address.
   <div class="field">
     <%= f.label :address %><br>
-    <%= f.text_field :address %>
+    <%= f.text_field :address, placeholder: "Optional" %>
   </div>
   <div class="field">
     <%= f.label :species %><br>
-    <%= f.select(:species_id, :scientific_name) %>
+    <%= f.select(:species_id, options_for_select(Species.all.map { |species| [species.common_name, species.id]})) %>
   </div>
   <div class="actions">
     <%= f.submit %>
