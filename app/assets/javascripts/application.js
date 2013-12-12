@@ -15,5 +15,10 @@
 //= require turbolinks
 //= require underscore
 //= require gmaps/google
+//= require bootstrap/js/bootstrap.min
+//= require plugins/back-to-top
+//= require plugins/jquery-migrate-1.2.1.min
+//= require js/jquery.cslider
+//= require js/modernizr
 //= require_tree .
 

@@ -1,6 +1,12 @@
-
+<!--=== Content Part ===-->
+<div class="container"> 
+  <!-- Service Blocks -->
+  <div class="row">
 
 <%= image_tag "http://maps.google.com/maps/api/staticmap?size=450x300&sensor=false&zoom=16&markers=#{@tree.latitude}%2C#{@tree.longitude}" %>
 
 <%= link_to 'Edit', edit_tree_path(@tree) %> |
 <%= link_to 'Back', trees_path %>
+
+  </div>
+</div>
